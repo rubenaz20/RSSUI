@@ -89,7 +89,7 @@ struct SettingView: View {
 //                }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("Settings", displayMode: .inline)
+//            .navigationBarTitle("Settings", displayMode: .inline)
             .environment(\.horizontalSizeClass, .regular)
         }
         .onAppear {

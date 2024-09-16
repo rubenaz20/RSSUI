@@ -8,7 +8,6 @@
 
 import SwiftUI
 import Combine
-import WebKit
 
 class WKWebViewModel: ObservableObject {
     
@@ -61,62 +60,20 @@ class WKWebViewModel: ObservableObject {
     }
 }
 
-struct WKWebViewWrapper: UIViewRepresentable {
+struct WKWebViewWrapper: View {
     
-    class Coordinator: NSObject, WKNavigationDelegate, UIScrollViewDelegate {
-        private var viewModel: WKWebViewModel
-
-        init(_ viewModel: WKWebViewModel) {
-            self.viewModel = viewModel
-        }
-
-        func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            let total = Double(webView.scrollView.contentSize.height)
-            self.viewModel.didFinishLoading = true
-            self.viewModel.canGoBack = webView.canGoBack
-            self.viewModel.canGoForward = webView.canGoForward
-            self.viewModel.total = total
-            
-            if self.viewModel.isFirst {
-                DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 0.3) {
-                    var contentOffsetY = 0.0
-                    if self.viewModel.progress > 0 {
-                        contentOffsetY = total * self.viewModel.progress - Double(webView.scrollView.bounds.height)
-                    }
-                    webView.scrollView.setContentOffset(CGPoint(x: 0, y: contentOffsetY), animated: false)
-                }
-            }
-        }
-        
-        func scrollViewDidScroll(_ scrollView: UIScrollView) {
-            let contentOffsetY = scrollView.contentOffset.y + scrollView.frame.height
-            self.viewModel.apply(progress: Double(contentOffsetY))
-        }
-    }
-
     @ObservedObject var viewModel: WKWebViewModel
-    
-    let webView = WKWebView()
-    
-    func makeUIView(context: Context) -> WKWebView {
-        self.webView.navigationDelegate = context.coordinator
-        self.webView.scrollView.delegate = context.coordinator
+
+    var body: some View {
+        // Convertir el link en una URL
         if let url = URL(string: viewModel.link) {
-            self.webView.load(URLRequest(url: url))
+            SafariView(url: url)
+        } else {
+            // Manejar el caso donde la URL es inválida
+            Text("URL no válida")
+                .foregroundColor(.red)
+                .padding()
         }
-        return self.webView
-    }
-    
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        
-    }
-    
-    static func dismantleUIView(_ uiView: WKWebView, coordinator: Coordinator) {
-        
-    }
-    
-    func makeCoordinator() -> WKWebViewWrapper.Coordinator {
-        return Coordinator(viewModel)
     }
 }
 

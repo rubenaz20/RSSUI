@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,24 +15,7 @@
 		4C0CF5C124C6F60600E0B4E6 /* SectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0CF5C024C6F60600E0B4E6 /* SectionView.swift */; };
 		4C435B2324DA887E00D16ED7 /* BatchImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B2224DA887E00D16ED7 /* BatchImportView.swift */; };
 		4C435B2C24DC076500D16ED7 /* BatchImportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B2B24DC076500D16ED7 /* BatchImportViewModel.swift */; };
-		4C435B3424DC148D00D16ED7 /* rssTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B3324DC148D00D16ED7 /* rssTests.swift */; };
-		4C435B3C24DC14B400D16ED7 /* BatchImportViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B3B24DC14B400D16ED7 /* BatchImportViewModelTests.swift */; };
-		4C435B3D24DC151400D16ED7 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA04AC524B9D8E300521D0C /* DataSource.swift */; };
-		4C435B3E24DC151400D16ED7 /* RSSItemDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA04AC324B9D8C300521D0C /* RSSItemDataSource.swift */; };
-		4C435B3F24DC151400D16ED7 /* RSSDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA04ACA24B9DD7600521D0C /* RSSDataSource.swift */; };
-		4C435B4024DC151400D16ED7 /* BatchImportViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B2B24DC076500D16ED7 /* BatchImportViewModel.swift */; };
-		4C435B4124DC189A00D16ED7 /* DataSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C812FF424BF1D9B00CDD840 /* DataSourceService.swift */; };
-		4C435B4224DC194500D16ED7 /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5A00624A1E98D0052E80A /* PersistenceManager.swift */; };
-		4C435B4324DC1DE700D16ED7 /* RSSItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C61EC7824C0C54E009674FC /* RSSItem+CoreDataClass.swift */; };
-		4C435B4424DC1DE700D16ED7 /* RSSItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872FE024AA1C5100934910 /* RSSItem+CoreDataProperties.swift */; };
-		4C435B4524DC1DE700D16ED7 /* RSS+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5A02124A1FD4E0052E80A /* RSS+CoreDataClass.swift */; };
-		4C435B4624DC1DE700D16ED7 /* RSS+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5A02224A1FD4E0052E80A /* RSS+CoreDataProperties.swift */; };
-		4C435B4724DC1DE700D16ED7 /* ModelHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872FCD24A87AAB00934910 /* ModelHelper.swift */; };
-		4C435B4824DC1E0900D16ED7 /* ManagedObjectContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA04AC824B9DBC000521D0C /* ManagedObjectContext.swift */; };
-		4C435B4924DC1E0900D16ED7 /* RSSError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872FD524A9F1B000934910 /* RSSError.swift */; };
-		4C435B4A24DC1E2A00D16ED7 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB18E4224A3578400F78F34 /* String+Ext.swift */; };
-		4C435B4B24DC1E2A00D16ED7 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB18E4424A3591100F78F34 /* Date+Ext.swift */; };
-		4C435B4D24DC524700D16ED7 /* DocumentPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B4C24DC524600D16ED7 /* DocumentPicker.swift */; };
+		4C435B4D24DC524700D16ED7 /* JsonURLPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B4C24DC524600D16ED7 /* JsonURLPicker.swift */; };
 		4C435B4F24E0E22D00D16ED7 /* RoundRectangeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B4E24E0E22D00D16ED7 /* RoundRectangeButton.swift */; };
 		4C435B5124E0E7B500D16ED7 /* DataNStorageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B5024E0E7B500D16ED7 /* DataNStorageView.swift */; };
 		4C435B5324E0E8DC00D16ED7 /* DataUnitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C435B5224E0E8DC00D16ED7 /* DataUnitView.swift */; };
@@ -58,7 +41,6 @@
 		4C9A3FF424A04D2A00AAEF0D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9A3FF324A04D2A00AAEF0D /* HomeView.swift */; };
 		4C9A3FF624A04D2C00AAEF0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9A3FF524A04D2C00AAEF0D /* Assets.xcassets */; };
 		4C9A3FF924A04D2C00AAEF0D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C9A3FF824A04D2C00AAEF0D /* Preview Assets.xcassets */; };
-		4C9A3FFC24A04D2C00AAEF0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C9A3FFA24A04D2C00AAEF0D /* LaunchScreen.storyboard */; };
 		4C9A400524A04FE300AAEF0D /* AddRSSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9A400424A04FE300AAEF0D /* AddRSSView.swift */; };
 		4C9A400824A0503400AAEF0D /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9A400724A0503400AAEF0D /* TextFieldView.swift */; };
 		4C9A414224A1B5A300AAEF0D /* RSSListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9A414124A1B5A300AAEF0D /* RSSListView.swift */; };
@@ -81,31 +63,12 @@
 		4CB5A02924A268DF0052E80A /* RSSFeedListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5A02824A268DF0052E80A /* RSSFeedListView.swift */; };
 		4CB5A02B24A26DE10052E80A /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CB5A02A24A26DE10052E80A /* SafariView.swift */; };
 		4CC6A6D124F614C900C88809 /* OPMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6D024F614C900C88809 /* OPMLParser.swift */; };
-		4CC6A6D324F617CA00C88809 /* OPMLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6D224F617CA00C88809 /* OPMLParserTests.swift */; };
-		4CC6A6D624F6183200C88809 /* Subscriptions-test.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6A6D524F6183200C88809 /* Subscriptions-test.opml */; };
-		4CC6A6D724F61A5D00C88809 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C872FCF24A9E48400934910 /* Request.swift */; };
-		4CC6A6D824F631BD00C88809 /* OPMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6D024F614C900C88809 /* OPMLParser.swift */; };
 		4CC6A6E724F6404300C88809 /* DateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E324F6404200C88809 /* DateSpec.swift */; };
 		4CC6A6E824F6404300C88809 /* RFC3339DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E424F6404200C88809 /* RFC3339DateFormatter.swift */; };
 		4CC6A6E924F6404300C88809 /* RFC822DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E524F6404200C88809 /* RFC822DateFormatter.swift */; };
 		4CC6A6EA24F6404300C88809 /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E624F6404200C88809 /* ISO8601DateFormatter.swift */; };
-		4CC6A6EB24F6406600C88809 /* RFC3339DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E424F6404200C88809 /* RFC3339DateFormatter.swift */; };
-		4CC6A6EC24F6406600C88809 /* RFC822DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E524F6404200C88809 /* RFC822DateFormatter.swift */; };
-		4CC6A6ED24F6406600C88809 /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E624F6404200C88809 /* ISO8601DateFormatter.swift */; };
-		4CC6A6EE24F6406D00C88809 /* DateSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E324F6404200C88809 /* DateSpec.swift */; };
-		4CC6A6F024F643A900C88809 /* Subscriptions-test2.opml in Resources */ = {isa = PBXBuildFile; fileRef = 4CC6A6EF24F643A900C88809 /* Subscriptions-test2.opml */; };
 		4CE833F524C2DBAB00A911F1 /* RSSListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE833F424C2DBAB00A911F1 /* RSSListViewModel.swift */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		4C435B3624DC148D00D16ED7 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4C9A3FE124A04D2A00AAEF0D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C9A3FE824A04D2A00AAEF0D;
-			remoteInfo = rss;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		4C0CF5AF24C6924800E0B4E6 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -116,11 +79,10 @@
 		4C0CF5C024C6F60600E0B4E6 /* SectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionView.swift; sourceTree = "<group>"; };
 		4C435B2224DA887E00D16ED7 /* BatchImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchImportView.swift; sourceTree = "<group>"; };
 		4C435B2B24DC076500D16ED7 /* BatchImportViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchImportViewModel.swift; sourceTree = "<group>"; };
-		4C435B3124DC148D00D16ED7 /* rssTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rssTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C435B3324DC148D00D16ED7 /* rssTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rssTests.swift; sourceTree = "<group>"; };
 		4C435B3524DC148D00D16ED7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C435B3B24DC14B400D16ED7 /* BatchImportViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatchImportViewModelTests.swift; sourceTree = "<group>"; };
-		4C435B4C24DC524600D16ED7 /* DocumentPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentPicker.swift; sourceTree = "<group>"; };
+		4C435B4C24DC524600D16ED7 /* JsonURLPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonURLPicker.swift; sourceTree = "<group>"; };
 		4C435B4E24E0E22D00D16ED7 /* RoundRectangeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundRectangeButton.swift; sourceTree = "<group>"; };
 		4C435B5024E0E7B500D16ED7 /* DataNStorageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataNStorageView.swift; sourceTree = "<group>"; };
 		4C435B5224E0E8DC00D16ED7 /* DataUnitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUnitView.swift; sourceTree = "<group>"; };
@@ -148,7 +110,6 @@
 		4C9A3FF324A04D2A00AAEF0D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4C9A3FF524A04D2C00AAEF0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C9A3FF824A04D2C00AAEF0D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		4C9A3FFB24A04D2C00AAEF0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C9A3FFD24A04D2C00AAEF0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C9A400424A04FE300AAEF0D /* AddRSSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRSSView.swift; sourceTree = "<group>"; };
 		4C9A400724A0503400AAEF0D /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
@@ -182,13 +143,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4C435B2E24DC148D00D16ED7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C9A3FE624A04D2A00AAEF0D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,7 +246,6 @@
 			isa = PBXGroup;
 			children = (
 				4C9A3FE924A04D2A00AAEF0D /* rss.app */,
-				4C435B3124DC148D00D16ED7 /* rssTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -312,7 +265,6 @@
 				4C9A3FEC24A04D2A00AAEF0D /* AppDelegate.swift */,
 				4C9A3FEE24A04D2A00AAEF0D /* SceneDelegate.swift */,
 				4C9A3FF524A04D2C00AAEF0D /* Assets.xcassets */,
-				4C9A3FFA24A04D2C00AAEF0D /* LaunchScreen.storyboard */,
 				4C9A3FFD24A04D2C00AAEF0D /* Info.plist */,
 				4CB5A01924A1FC460052E80A /* RSS.xcdatamodeld */,
 				4C9A3FF724A04D2C00AAEF0D /* Preview Content */,
@@ -331,6 +283,7 @@
 		4C9A400324A04DD100AAEF0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				847B77802C9847B100CBB0C1 /* Safari */,
 				4C0CF57B24C578AD00E0B4E6 /* Setting */,
 				4C812FFA24C0BB8300CDD840 /* Archive */,
 				4C812FF924C0BB8300CDD840 /* RSS */,
@@ -350,7 +303,7 @@
 				4C0CF5C024C6F60600E0B4E6 /* SectionView.swift */,
 				4C46675724D00F1D007DFD2C /* ProgressBar.swift */,
 				4C435B5824E124CE00D16ED7 /* LinerProgressBar.swift */,
-				4C435B4C24DC524600D16ED7 /* DocumentPicker.swift */,
+				4C435B4C24DC524600D16ED7 /* JsonURLPicker.swift */,
 				4C435B4E24E0E22D00D16ED7 /* RoundRectangeButton.swift */,
 				4C435B5A24E1B71F00D16ED7 /* TextView.swift */,
 			);
@@ -429,27 +382,16 @@
 			path = Dates;
 			sourceTree = "<group>";
 		};
+		847B77802C9847B100CBB0C1 /* Safari */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Safari;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4C435B3024DC148D00D16ED7 /* rssTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4C435B3824DC148D00D16ED7 /* Build configuration list for PBXNativeTarget "rssTests" */;
-			buildPhases = (
-				4C435B2D24DC148D00D16ED7 /* Sources */,
-				4C435B2E24DC148D00D16ED7 /* Frameworks */,
-				4C435B2F24DC148D00D16ED7 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				4C435B3724DC148D00D16ED7 /* PBXTargetDependency */,
-			);
-			name = rssTests;
-			productName = rssTests;
-			productReference = 4C435B3124DC148D00D16ED7 /* rssTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		4C9A3FE824A04D2A00AAEF0D /* rss */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C9A400024A04D2C00AAEF0D /* Build configuration list for PBXNativeTarget "rss" */;
@@ -480,10 +422,6 @@
 				LastUpgradeCheck = 1150;
 				ORGANIZATIONNAME = acumen;
 				TargetAttributes = {
-					4C435B3024DC148D00D16ED7 = {
-						CreatedOnToolsVersion = 11.5;
-						TestTargetID = 4C9A3FE824A04D2A00AAEF0D;
-					};
 					4C9A3FE824A04D2A00AAEF0D = {
 						CreatedOnToolsVersion = 11.5;
 					};
@@ -506,26 +444,15 @@
 			projectRoot = "";
 			targets = (
 				4C9A3FE824A04D2A00AAEF0D /* rss */,
-				4C435B3024DC148D00D16ED7 /* rssTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		4C435B2F24DC148D00D16ED7 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CC6A6D624F6183200C88809 /* Subscriptions-test.opml in Resources */,
-				4CC6A6F024F643A900C88809 /* Subscriptions-test2.opml in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C9A3FE724A04D2A00AAEF0D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C9A3FFC24A04D2C00AAEF0D /* LaunchScreen.storyboard in Resources */,
 				4C9A3FF924A04D2C00AAEF0D /* Preview Assets.xcassets in Resources */,
 				4C9A3FF624A04D2C00AAEF0D /* Assets.xcassets in Resources */,
 			);
@@ -534,37 +461,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		4C435B2D24DC148D00D16ED7 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4CC6A6EE24F6406D00C88809 /* DateSpec.swift in Sources */,
-				4CC6A6EB24F6406600C88809 /* RFC3339DateFormatter.swift in Sources */,
-				4CC6A6EC24F6406600C88809 /* RFC822DateFormatter.swift in Sources */,
-				4CC6A6ED24F6406600C88809 /* ISO8601DateFormatter.swift in Sources */,
-				4CC6A6D824F631BD00C88809 /* OPMLParser.swift in Sources */,
-				4CC6A6D724F61A5D00C88809 /* Request.swift in Sources */,
-				4C435B4A24DC1E2A00D16ED7 /* String+Ext.swift in Sources */,
-				4C435B4B24DC1E2A00D16ED7 /* Date+Ext.swift in Sources */,
-				4C435B4824DC1E0900D16ED7 /* ManagedObjectContext.swift in Sources */,
-				4C435B4924DC1E0900D16ED7 /* RSSError.swift in Sources */,
-				4C435B4324DC1DE700D16ED7 /* RSSItem+CoreDataClass.swift in Sources */,
-				4C435B4424DC1DE700D16ED7 /* RSSItem+CoreDataProperties.swift in Sources */,
-				4C435B4524DC1DE700D16ED7 /* RSS+CoreDataClass.swift in Sources */,
-				4C435B4624DC1DE700D16ED7 /* RSS+CoreDataProperties.swift in Sources */,
-				4CC6A6D324F617CA00C88809 /* OPMLParserTests.swift in Sources */,
-				4C435B4724DC1DE700D16ED7 /* ModelHelper.swift in Sources */,
-				4C435B4224DC194500D16ED7 /* PersistenceManager.swift in Sources */,
-				4C435B4124DC189A00D16ED7 /* DataSourceService.swift in Sources */,
-				4C435B3D24DC151400D16ED7 /* DataSource.swift in Sources */,
-				4C435B3E24DC151400D16ED7 /* RSSItemDataSource.swift in Sources */,
-				4C435B3F24DC151400D16ED7 /* RSSDataSource.swift in Sources */,
-				4C435B4024DC151400D16ED7 /* BatchImportViewModel.swift in Sources */,
-				4C435B3C24DC14B400D16ED7 /* BatchImportViewModelTests.swift in Sources */,
-				4C435B3424DC148D00D16ED7 /* rssTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4C9A3FE524A04D2A00AAEF0D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,7 +499,7 @@
 				4CA04AC924B9DBC000521D0C /* ManagedObjectContext.swift in Sources */,
 				4C872FE224AA1C5100934910 /* RSSItem+CoreDataProperties.swift in Sources */,
 				4C9A400824A0503400AAEF0D /* TextFieldView.swift in Sources */,
-				4C435B4D24DC524700D16ED7 /* DocumentPicker.swift in Sources */,
+				4C435B4D24DC524700D16ED7 /* JsonURLPicker.swift in Sources */,
 				4CB5A00724A1E98D0052E80A /* PersistenceManager.swift in Sources */,
 				4C0CF5BA24C6BB7A00E0B4E6 /* WebView.swift in Sources */,
 				4C488D7024BEA58300406700 /* ActionContextMenu.swift in Sources */,
@@ -632,68 +528,7 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		4C435B3724DC148D00D16ED7 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 4C9A3FE824A04D2A00AAEF0D /* rss */;
-			targetProxy = 4C435B3624DC148D00D16ED7 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		4C9A3FFA24A04D2C00AAEF0D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4C9A3FFB24A04D2C00AAEF0D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		4C435B3924DC148D00D16ED7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CDAT27Y9CY;
-				INFOPLIST_FILE = rssTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.acumen.rssTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rss.app/rss";
-			};
-			name = Debug;
-		};
-		4C435B3A24DC148D00D16ED7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = CDAT27Y9CY;
-				INFOPLIST_FILE = rssTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.acumen.rssTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rss.app/rss";
-			};
-			name = Release;
-		};
 		4C9A3FFE24A04D2C00AAEF0D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -751,6 +586,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Debug;
 		};
@@ -804,6 +640,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -812,24 +649,29 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = rss/rss.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"rss/Preview Content\"";
-				DEVELOPMENT_TEAM = CDAT27Y9CY;
+				DEVELOPMENT_TEAM = 9HDUDSX34K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = rss/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RBNRSS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.acumen.rss;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.acumen.rss.rbnrt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Debug;
 		};
@@ -837,41 +679,37 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = rss/rss.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"rss/Preview Content\"";
-				DEVELOPMENT_TEAM = CDAT27Y9CY;
+				DEVELOPMENT_TEAM = 9HDUDSX34K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = rss/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = RBNRSS;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.magazines-and-newspapers";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.acumen.rss;
+				MARKETING_VERSION = 2.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.acumen.rss.rbnrt;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "appletvos appletvsimulator iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = "1,2,3";
+				TVOS_DEPLOYMENT_TARGET = 17.0;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4C435B3824DC148D00D16ED7 /* Build configuration list for PBXNativeTarget "rssTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4C435B3924DC148D00D16ED7 /* Debug */,
-				4C435B3A24DC148D00D16ED7 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		4C9A3FE424A04D2A00AAEF0D /* Build configuration list for PBXProject "rss" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -19,16 +19,16 @@ struct SectionView<Content: View>: View {
             #if os(iOS)
             if description == nil {
                 Section {
-                    if title != nil {
-                        Text(title!)
+                    if let title = title {
+                        Text(title)
                             .font(.headline)
                     }
                     content()
                 }
             } else {
-                Section(footer: Text(description!)) {
-                    if title != nil {
-                        Text(title!)
+                Section(footer: Text(description ?? "")) {
+                    if let title = title {
+                        Text(title)
                             .font(.headline)
                     }
                     content()
@@ -37,15 +37,22 @@ struct SectionView<Content: View>: View {
             #else
             Group {
                 if let title = title {
-                    Text(title).font(.title3).bold()
+                    Text(title)
+                        .font(.title3)
+                        .bold()
                 }
                 content()
-                Text(description).font(.body).foregroundColor(.secondary)
+                if let description = description {
+                    Text(description)
+                        .font(.body)
+                        .foregroundColor(.secondary)
+                }
                 Divider()
             }
             #endif
         }
     }
+
 }
 
 struct SectionView_Previews: PreviewProvider {

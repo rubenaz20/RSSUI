@@ -19,7 +19,7 @@ struct TextView: UIViewRepresentable {
         textView.autocapitalizationType = .sentences
         textView.isSelectable = true
         textView.isUserInteractionEnabled = true
-        textView.isEditable = false
+//        textView.isEditable = false
         return textView
     }
     

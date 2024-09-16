@@ -86,11 +86,11 @@ struct WebView: View {
 
 extension WebView {
     func onGoBackAction() {
-        webViewWrapper.webView.goBack()
+//        webViewWrapper.webView.goBack()
     }
     
     func onGoForwardAction() {
-        webViewWrapper.webView.goForward()
+//        webViewWrapper.webView.goForward()
     }
     
     func onCloseAction() {

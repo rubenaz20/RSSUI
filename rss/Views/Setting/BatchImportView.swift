@@ -17,11 +17,11 @@ struct BatchImportView: View {
     @State private var buttonStatus: RoundRectangeButton.Status = .normal("Select File...")
     @State private var JSONText = ""
     
-    @ObservedObject private var pickerViewModel: DocumentPickerViewModel
+    @ObservedObject private var pickerViewModel: JsonURLPickerViewModel
     
     init(viewModel: BatchImportViewModel) {
         self.viewModel = viewModel
-        self.pickerViewModel = DocumentPickerViewModel()
+        self.pickerViewModel = JsonURLPickerViewModel()
     }
     
     var body: some View {
@@ -73,7 +73,7 @@ struct BatchImportView: View {
             }
         }
         .sheet(isPresented: $isSheetPresented, content: {
-            DocumentPicker(viewModel: self.pickerViewModel)
+            JsonURLPicker(viewModel: self.pickerViewModel)
         })
         .onReceive(self.pickerViewModel.$jsonURL, perform: { output in
             guard let jsonURL = output else { return }

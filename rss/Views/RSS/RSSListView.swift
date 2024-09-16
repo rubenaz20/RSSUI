@@ -87,7 +87,7 @@ struct RSSListView: View {
                             }
                         }
                     }
-                    .navigationBarTitle("RSS", displayMode: .inline)
+//                    .navigationBarTitle("RSS", displayMode: .inline)
 //                    .navigationBarHidden(true)
                 }
                 Spacer()
