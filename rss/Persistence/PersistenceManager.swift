@@ -12,7 +12,7 @@ import Combine
 
 class Persistence {
     
-    static private(set) var current = Persistence(version: 1)
+    static private(set) var current = Persistence(version: 2)
     
     var context: NSManagedObjectContext {
         let c = container.viewContext
@@ -23,7 +23,7 @@ class Persistence {
     
     private let isStoreLoaded = CurrentValueSubject<Bool, Error>(false)
     
-    init(directory: FileManager.SearchPathDirectory = .documentDirectory,
+    init(directory: FileManager.SearchPathDirectory = .cachesDirectory,
          domainMask: FileManager.SearchPathDomainMask = .userDomainMask,
          version vNumber: UInt) {
         let version = Version(vNumber)
@@ -62,7 +62,7 @@ extension Persistence {
         }
 
         private var subpathToDB: String {
-            return "\(modelName).sql"
+            return "\(modelName).sqlite"
         }
     }
 }

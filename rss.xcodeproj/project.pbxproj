@@ -68,6 +68,7 @@
 		4CC6A6E924F6404300C88809 /* RFC822DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E524F6404200C88809 /* RFC822DateFormatter.swift */; };
 		4CC6A6EA24F6404300C88809 /* ISO8601DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC6A6E624F6404200C88809 /* ISO8601DateFormatter.swift */; };
 		4CE833F524C2DBAB00A911F1 /* RSSListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE833F424C2DBAB00A911F1 /* RSSListViewModel.swift */; };
+		847B77872C985FF700CBB0C1 /* SwiftHTMLtoMarkdown in Frameworks */ = {isa = PBXBuildFile; productRef = 847B77862C985FF700CBB0C1 /* SwiftHTMLtoMarkdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -148,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CB5A00224A1E4CB0052E80A /* FeedKit in Frameworks */,
+				847B77872C985FF700CBB0C1 /* SwiftHTMLtoMarkdown in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +409,7 @@
 			name = rss;
 			packageProductDependencies = (
 				4CB5A00124A1E4CB0052E80A /* FeedKit */,
+				847B77862C985FF700CBB0C1 /* SwiftHTMLtoMarkdown */,
 			);
 			productName = rss;
 			productReference = 4C9A3FE924A04D2A00AAEF0D /* rss.app */;
@@ -438,6 +441,7 @@
 			mainGroup = 4C9A3FE024A04D2A00AAEF0D;
 			packageReferences = (
 				4CB5A00024A1E4CB0052E80A /* XCRemoteSwiftPackageReference "FeedKit" */,
+				847B77852C985F1900CBB0C1 /* XCRemoteSwiftPackageReference "SwiftHTMLToMarkdown" */,
 			);
 			productRefGroup = 4C9A3FEA24A04D2A00AAEF0D /* Products */;
 			projectDirPath = "";
@@ -739,6 +743,14 @@
 				minimumVersion = 9.1.2;
 			};
 		};
+		847B77852C985F1900CBB0C1 /* XCRemoteSwiftPackageReference "SwiftHTMLToMarkdown" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ActuallyTaylor/SwiftHTMLToMarkdown";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -746,6 +758,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4CB5A00024A1E4CB0052E80A /* XCRemoteSwiftPackageReference "FeedKit" */;
 			productName = FeedKit;
+		};
+		847B77862C985FF700CBB0C1 /* SwiftHTMLtoMarkdown */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 847B77852C985F1900CBB0C1 /* XCRemoteSwiftPackageReference "SwiftHTMLToMarkdown" */;
+			productName = SwiftHTMLtoMarkdown;
 		};
 /* End XCSwiftPackageProductDependency section */
 

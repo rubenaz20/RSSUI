@@ -30,15 +30,16 @@ struct RSSFeedListView: View {
     }
     
     var body: some View {
-        VStack {
+        NavigationStack {
             List {
                 ForEach(self.rssFeedViewModel.items, id: \.self) { item in
-                    RSSItemRow(wrapper: item,
-                               menu: self.contextmenuAction(_:))
-                        .contentShape(Rectangle())
-                        .onTapGesture {
-                            self.selectedItem = item
-                        }
+                    NavigationLink(value: item) {
+                        RSSItemRow(wrapper: item, menu: self.contextmenuAction(_:))
+                            .contentShape(Rectangle())
+                            .onTapGesture {
+                                self.selectedItem = item
+                            }
+                    }
                 }
                 VStack(alignment: .center) {
                     Button(action: self.rssFeedViewModel.loadMore) {
@@ -46,25 +47,14 @@ struct RSSFeedListView: View {
                     }
                 }
             }
-            .navigationBarTitle(rssSource.title)
-        }
-        .sheet(item: $selectedItem, content: { item in
-            if AppEnvironment.current.useSafari {
+            .navigationTitle(rssSource.title)
+            .navigationDestination(for: RSSItem.self) { item in
                 SafariView(url: URL(string: item.url)!)
-            } else {
-                WebView(
-                    rssItem: item,
-                    onCloseClosure: {
-                        self.selectedItem = nil
-                    },
-                    onArchiveClosure: {
-                        self.rssFeedViewModel.archiveOrCancel(item)
-                })
             }
-        })
-        .onAppear {
-            self.rssFeedViewModel.fecthResults()
-            self.rssFeedViewModel.fetchRemoteRSSItems()
+            .onAppear {
+                self.rssFeedViewModel.fecthResults()
+                self.rssFeedViewModel.fetchRemoteRSSItems()
+            }
         }
     }
     
