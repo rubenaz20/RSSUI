@@ -11,7 +11,9 @@ import Combine
 import SwiftHTMLtoMarkdown
 
 class HTMLContentViewModel: ObservableObject {
-    @Published var htmlContent: LocalizedStringKey = "Cargando..."
+    @Published var htmlContent: String = "Cargando..."
+    @Published var imageURL: String? = nil
+    @Published var loading: Bool = true
     private var url: URL
     
     init(url: URL) {
@@ -24,6 +26,7 @@ class HTMLContentViewModel: ObservableObject {
             if let error = error {
                 DispatchQueue.main.async {
                     self.htmlContent = "Error: \(error.localizedDescription)"
+                    self.loading = false
                 }
                 return
             }
@@ -31,6 +34,7 @@ class HTMLContentViewModel: ObservableObject {
             guard let data = data else {
                 DispatchQueue.main.async {
                     self.htmlContent = "No data"
+                    self.loading = false
                 }
                 return
             }
@@ -43,88 +47,99 @@ class HTMLContentViewModel: ObservableObject {
                         basicHTML.rawHTML = htmlString
                         try basicHTML.parse()
                         let markdown = try basicHTML.asMarkdown()
-                        self.htmlContent = LocalizedStringKey(markdown)
+                        self.htmlContent = self.cleanMarkdownString(markdown)
+                        self.loading = false
                     } catch {
                         // Manejar el error aquí si es necesario
                         print("Error al convertir HTML a Markdown: \(error)")
+                        self.htmlContent = "No se pudo convertir el contenido"
+                        self.loading = false
                     }
                 }
             } else {
                 DispatchQueue.main.async {
                     self.htmlContent = "No se pudo convertir el contenido"
+                    self.loading = false
                 }
             }
         }.resume()
     }
+    
+    private func cleanMarkdownString(_ markdownString: String) -> String {
+        // Expresión regular para encontrar [Texto](URL) y []() vacíos
+        let linkPattern = "\\[([^\\]]*)\\]\\([^\\)]+\\)|\\[\\]\\([^\\)]+\\)"
+        // Expresión regular para encontrar "por [fecha]escrito por [fecha]" o similares
+        let datePattern = "por\\s+\\d{2}/\\d{2}/\\d{4}\\s*escrito\\s+por\\s+\\d{2}/\\d{2}/\\d{4}\\d*"
+
+        do {
+            // Crear el regex para eliminar los enlaces
+            let linkRegex = try NSRegularExpression(pattern: linkPattern)
+            var cleanedString = linkRegex.stringByReplacingMatches(in: markdownString, range: NSRange(markdownString.startIndex..., in: markdownString), withTemplate: "")
+            
+            // Crear el regex para eliminar fechas y textos similares
+            let dateRegex = try NSRegularExpression(pattern: datePattern)
+            cleanedString = dateRegex.stringByReplacingMatches(in: cleanedString, range: NSRange(cleanedString.startIndex..., in: cleanedString), withTemplate: "")
+            
+            // Buscar "Powered by:" y eliminar todo lo que venga después
+            if let range = cleanedString.range(of: "Powered by:") {
+                cleanedString = String(cleanedString[..<range.lowerBound])
+            }
+            
+            return cleanedString
+        } catch {
+            print("Error al crear el regex: \(error)")
+            return markdownString // Si hay un error, devolver la cadena original
+        }
+    }
+
 }
 
 struct SafariView: View {
     @StateObject private var viewModel: HTMLContentViewModel
     
-    init(url: URL) {
+    init(url: URL, imageURL: String?) {
         _viewModel = StateObject(wrappedValue: HTMLContentViewModel(url: url))
     }
-
+    
     var body: some View {
-        ScrollViewWrapper {
-            VStack {
-                Text(viewModel.htmlContent)
-                    .padding()
-                    .background(Color.black)
-                    .foregroundColor(Color.white)
+        GeometryReader { geometry in
+            ZStack {
+                if viewModel.loading {
+                    ProgressView("Cargando...")
+                        .progressViewStyle(CircularProgressViewStyle())
+                        .frame(width: geometry.size.width, height: geometry.size.height)
+                } else {
+                    List {
+                        let lines = viewModel.htmlContent.split(separator: "\n")
+                        ForEach(lines.indices, id: \.self) { index in
+                            let line = String(lines[index])
+                            let formattedLine = formatLine(line)
+                            Text(formattedLine.text)
+                              .font(formattedLine.font)
+                              .fixedSize(horizontal: false, vertical: true)
+                              .focusable()
+                        }
+                    } .padding(40)
+                }
             }
-            .padding()
         }
-        .background(Color.black)
     }
-}
-
-struct ScrollViewWrapper<Content: View>: UIViewRepresentable {
-    let content: Content
-
-    init(@ViewBuilder content: () -> Content) {
-        self.content = content()
+    
+    private func formatLine(_ line: String) -> (text: String, font: Font) {
+        let lineFormatted = line.replacingOccurrences(of: "*", with: "")
+        if lineFormatted.hasPrefix("# ") {
+            var text = lineFormatted.replacingOccurrences(of: "# ", with: "")
+            text = text.replacingOccurrences(of: "#", with: "")
+            return (String(text), .title) // Títulos principales
+        } else if lineFormatted.hasPrefix("## ") {
+            var text = lineFormatted.replacingOccurrences(of: "## ", with: "")
+            text = text.replacingOccurrences(of: "#", with: "")
+            return (String(text), .headline) // Subtítulos
+        } else {
+            let text = lineFormatted.replacingOccurrences(of: "#", with: "")
+            return (text, .body) // Texto normal
+        }
     }
-
-    func makeUIView(context: Context) -> UIScrollView {
-        let scrollView = UIScrollView()
-        let hostingController = UIHostingController(rootView: content)
-        hostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        scrollView.addSubview(hostingController.view)
-        
-        NSLayoutConstraint.activate([
-            hostingController.view.leadingAnchor.constraint(equalTo: scrollView.leadingAnchor),
-            hostingController.view.trailingAnchor.constraint(equalTo: scrollView.trailingAnchor),
-            hostingController.view.topAnchor.constraint(equalTo: scrollView.topAnchor),
-            hostingController.view.bottomAnchor.constraint(equalTo: scrollView.bottomAnchor),
-            hostingController.view.widthAnchor.constraint(equalTo: scrollView.widthAnchor)
-        ])
-        
-        return scrollView
-    }
-
-    func updateUIView(_ uiView: UIScrollView, context: Context) {
-        // Remove old hosting view and add a new one to reflect the content update
-        let newHostingController = UIHostingController(rootView: content)
-        newHostingController.view.translatesAutoresizingMaskIntoConstraints = false
-        
-        // Remove previous hosted view
-        uiView.subviews.forEach { $0.removeFromSuperview() }
-        
-        // Add the new hosted view
-        uiView.addSubview(newHostingController.view)
-        
-        NSLayoutConstraint.activate([
-            newHostingController.view.leadingAnchor.constraint(equalTo: uiView.leadingAnchor),
-            newHostingController.view.trailingAnchor.constraint(equalTo: uiView.trailingAnchor),
-            newHostingController.view.topAnchor.constraint(equalTo: uiView.topAnchor),
-            newHostingController.view.bottomAnchor.constraint(equalTo: uiView.bottomAnchor),
-            newHostingController.view.widthAnchor.constraint(equalTo: uiView.widthAnchor),
-            newHostingController.view.heightAnchor.constraint(greaterThanOrEqualTo: uiView.heightAnchor) // Ensure height is greater
-        ])
-    }
-
 }
 
 

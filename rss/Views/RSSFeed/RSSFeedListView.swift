@@ -49,7 +49,8 @@ struct RSSFeedListView: View {
             }
             .navigationTitle(rssSource.title)
             .navigationDestination(for: RSSItem.self) { item in
-                SafariView(url: URL(string: item.url)!)
+                let imgURL = extractImageSrc(from: item.desc)
+                SafariView(url: URL(string: item.url)!, imageURL: imgURL)
             }
             .onAppear {
                 self.rssFeedViewModel.fecthResults()
@@ -60,5 +61,28 @@ struct RSSFeedListView: View {
     
     func contextmenuAction(_ item: RSSItem) {
         rssFeedViewModel.archiveOrCancel(item)
+    }
+    
+    private func extractImageSrc(from desc: String) -> String? {
+        let srcPattern = "src=\"([^\"]+)\""
+        
+        do {
+            // Crear el regex para encontrar el atributo src
+            let regex = try NSRegularExpression(pattern: srcPattern)
+            let nsString = desc as NSString
+            let results = regex.matches(in: desc, range: NSRange(location: 0, length: nsString.length))
+            
+            // Obtener el primer resultado del regex
+            if let match = results.first {
+                // El grupo 1 contiene el valor del atributo src
+                let srcRange = match.range(at: 1)
+                return nsString.substring(with: srcRange)
+            }
+            
+            return nil
+        } catch {
+            print("Error al crear el regex: \(error)")
+            return nil
+        }
     }
 }
